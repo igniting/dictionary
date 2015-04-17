@@ -12,6 +12,9 @@ executable dictionary
     build-depends:
         base >=4.7 && <4.8,
         bytestring >=0.10 && <0.11,
-        keyvalue >=0.1 && <0.2
+        keyvalue >=0.1 && <0.2,
+        http-conduit >=2.1 && <2.2,
+        conduit-extra >=1.1 && <1.2,
+        conduit >=1.2 && <1.3
     main-is: Main.hs
     default-language: Haskell2010
