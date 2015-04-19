@@ -15,13 +15,9 @@ printUsage = putStrLn "1. Initialize the dictionary" >>
 
 performAction :: String -> IO ()
 performAction "1" = do
-  putStrLn "Downloading the dictionary..."
   download
-  putStrLn "Finished Downloading."
   contents <- readFile "dict.txt"
-  putStrLn "Inserting terms in database..."
   insertRecordsInDB contents
-  putStrLn "Dictionary initialized."
 
 performAction "2" = do
   putStr "Enter a term: "

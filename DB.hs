@@ -10,10 +10,12 @@ import           Parse
 
 insertRecordsInDB :: String -> IO ()
 insertRecordsInDB s = do
+  putStrLn "Inserting records in database..."
   m <- KV.initDB (Config "db")
   let records = getRecords $ splitLines s
   mapM_ (insertRecordInDB m) records
   KV.closeDB m
+  putStrLn "Dictionary initialized."
 
 insertRecordInDB:: KeyValue -> Record -> IO ()
 insertRecordInDB db (Record t def) = do
